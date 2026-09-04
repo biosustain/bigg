@@ -1,4 +1,7 @@
+from __future__ import annotations
+
 from datetime import datetime
+from functools import cache
 from typing import Any, Dict, Iterable, Optional, Type, Union
 import requests
 from bigg import models
@@ -7,8 +10,10 @@ API_URL = "https://bigg.bio/api/v3/"
 OBJECTS_API_URL = f"{API_URL}objects/"
 IDENTIFIERS_API_URL = f"{API_URL}identifiers/"
 
-#: Dictionary mapping available cobradb-style model names to their classes.
-MODEL_NAMES = {x.__name__: x for x in models.Base.__subclasses__()}
+
+@cache
+def _model_names() -> Dict[str, Type[models.Base]]:
+    return {x.__name__: x for x in models.Base.__subclasses__()}
 
 
 def _request(api_url: str, data: Dict[str, Any]) -> Optional[Any]:
@@ -70,7 +75,7 @@ def _convert_result_to_models(o):
         if "_type" in o:
             if o["_type"] == "datetime":
                 return datetime.fromisoformat(o["iso"])
-            cls_type = MODEL_NAMES.get(o["_type"])
+            cls_type = _model_names().get(o["_type"])
             if cls_type is None:
                 raise ValueError()
         entries = {k: _convert_result_to_models(v) for k, v in o.items() if k != "_type"}
