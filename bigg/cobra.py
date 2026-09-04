@@ -1,7 +1,7 @@
 import cobra as cobrapy
 
-from biggr import objects
-from biggr.models import (
+from bigg import objects
+from bigg.models import (
     CompartmentalizedComponent,
     Component,
     UniversalCompartmentalizedComponent,

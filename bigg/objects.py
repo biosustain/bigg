@@ -1,9 +1,9 @@
 from datetime import datetime
 from typing import Any, Dict, Iterable, Optional, Type, Union
 import requests
-from biggr import models
+from bigg import models
 
-API_URL = "https://biggr.org/api/v3/"
+API_URL = "https://bigg.bio/api/v3/"
 OBJECTS_API_URL = f"{API_URL}objects/"
 IDENTIFIERS_API_URL = f"{API_URL}identifiers/"
 
@@ -17,7 +17,7 @@ def _request(api_url: str, data: Dict[str, Any]) -> Optional[Any]:
     Parameters
     ----------
     api_url: str
-        URL of the BiGGr API to connect to.
+        URL of the BiGG API to connect to.
     data: dict
         Request data.
 
@@ -36,14 +36,14 @@ def get_raw(
 ) -> Optional[Any]:
     """Get the raw API request results as a python dictionary.
     
-    Makes the BiGGr API request to obtain object(s) of type `obj_type`. Returns the JSON
+    Makes the BiGG API request to obtain object(s) of type `obj_type`. Returns the JSON
     result interpreted as python dictionary.
 
     Parameters
     ----------
     obj_type: str or the class of the object to be retrieved
-        For all possible values, please refer to the BiGGr API documentation at
-        `biggr.org/data_access <https://biggr.org/data_access#data_objects_objects>`__
+        For all possible values, please refer to the BiGG API documentation at
+        `bigg.bio/data_access <https://bigg.bio/data_access#data_objects_objects>`__
     obj_id: str or int
         If `obj_id` is a str, the ID is interpreted as a BiGG ID (this can not be used
         with all database entities). In the case that `obj_id` is of type int, the ID is
@@ -81,18 +81,18 @@ def _convert_result_to_models(o):
 
 
 def get(obj_type: Union[str, Type[models.Base]], obj_id: Union[str, int]):
-    """Get an entity from the BiGGr database and return it as a python object.
+    """Get an entity from the BiGG database and return it as a python object.
     
-    Makes the BiGGr API request to obtain object(s) of type `obj_type`. Returns the JSON
+    Makes the BiGG API request to obtain object(s) of type `obj_type`. Returns the JSON
     result interpreted as an instance of the applicable class, as available in the
-    `biggr.models` module. Some relations are loaded by default, whilst others are
+    `bigg.models` module. Some relations are loaded by default, whilst others are
     loaded automatically when accessed.
 
     Parameters
     ----------
     obj_type: str or the class of the object to be retrieved
-        For all possible values, please refer to the BiGGr API documentation at
-        `biggr.org/data_access <https://biggr.org/data_access#data_objects_objects>`__
+        For all possible values, please refer to the BiGG API documentation at
+        `bigg.bio/data_access <https://bigg.bio/data_access#data_objects_objects>`__
     obj_id: str or int
         If `obj_id` is a str, the ID is interpreted as a BiGG ID (this can not be used
         with all database entities). In the case that `obj_id` is of type int, the ID is

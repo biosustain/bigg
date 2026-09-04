@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# biggr documentation build configuration file, created by
+# bigg documentation build configuration file, created by
 # sphinx-quickstart on Wed Jun 13 19:17:34 2012.
 #
 # This file is execfile()d with the current directory set to its containing
@@ -36,7 +36,7 @@ extensions = [
     "sphinx.ext.viewcode",
 ]
 # Document Python Code
-autoapi_dirs = [join(SRC_PATH, "biggr")]
+autoapi_dirs = [join(SRC_PATH, "bigg")]
 autoapi_add_toctree_entry = False
 autoapi_options = [
     "members",
@@ -55,18 +55,18 @@ napoleon_numpy_docstring = True
 master_doc = "index"
 
 # General information about the project.
-project = "biggr"
+project = "bigg"
 copyright = "2025-2026, Pascal A. Pieters"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 # This import has to be here.
-from biggr import __version__ as release  # noqa: E402
+from bigg import __version__ as release  # noqa: E402
 
 doc_name = f"{project} Documentation"
 authors = "Pascal A. Pieters"
-description = """Easy access to the BiGGr API."""
+description = """Easy access to the BiGG API."""
 
 version = ".".join(release.split(".")[:2])
 author = authors

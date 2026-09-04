@@ -3,9 +3,9 @@ requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "biggr"
+name = "bigg"
 version = "0.1.0"
-description = "Easy access to the BiGGr API."
+description = "Easy access to the BiGG API."
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "GPL"}
@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/pascalaldo/biggr"
+Homepage = "https://github.com/biosustain/bigg"
 
 [tool.setuptools.packages.find]
-include = ["biggr*"]
+include = ["bigg*"]

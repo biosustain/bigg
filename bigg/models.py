@@ -16,7 +16,7 @@ from typing import (
     Union,
     no_type_check,
 )
-from biggr import objects
+from bigg import objects
 
 OBJECT_CACHE = {}
 LAZY_LOADING = True
