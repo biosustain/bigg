@@ -44,7 +44,7 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 html:
-#	sphinx-apidoc -f -d 2 -e -o $(AUTODIR) ../biggr
+#	sphinx-apidoc -f -d 2 -e -o $(AUTODIR) ../bigg
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -80,17 +80,17 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/biggr.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/bigg.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/biggr.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/bigg.qhc"
 
 devhelp:
 	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/biggr"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/biggr"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/bigg"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/bigg"
 	@echo "# devhelp"
 
 epub:
