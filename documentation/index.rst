@@ -1,16 +1,16 @@
-biggr
+bigg
 =========================
 
-Python library to easily use the `BiGGr Models Repository`_ API.
+Python library to easily use the `BiGG Models Repository`_ API.
 
-.. _BiGGr Models Repository: https://biggr.org
+.. _BiGG Models Repository: https://bigg.bio
 
 .. toctree::
     :numbered: 3
     :maxdepth: 3
 
     basic_usage
-    API </autoapi/biggr/index.rst>
+    API </autoapi/bigg/index.rst>
 
 
 Indices and tables
